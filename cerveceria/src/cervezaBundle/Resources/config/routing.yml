@@ -1,0 +1,3 @@
+cerveza_homepage:
+    path:     /
+    defaults: { _controller: cervezaBundle:Default:index }
