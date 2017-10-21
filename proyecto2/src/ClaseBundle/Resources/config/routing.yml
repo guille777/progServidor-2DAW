@@ -1,0 +1,3 @@
+clase_homepage:
+    path:     /
+    defaults: { _controller: ClaseBundle:Default:index }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Login{% endblock %}</title>
+        {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/login.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/estilos.css') }}" />
+          <link rel="icon" type="image/x-icon" href="{{ asset('img/harry.jpg') }}" />
+        {% endblock %}
+    </head>
+
+    <body>
+    {% block body %}
+    <div class="login">
+    <div class="heading">
+      <h2 style="color: red;">Login//registro</h2>
+      <form action="#">
+
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon"><i class="fa fa-user"></i></span>
+          <input type="text" class="form-control" placeholder="Username">
+            </div>
+          <br>
+          <div class="input-group input-group-lg">
+            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+            <input type="password" class="form-control" placeholder="Password">
+          </div>
+          <br>
+<!--Cambiar por input hidden y login para accion php  -->
+          <button type="submit" class="float">Entrar</button><br><br>
+
+          <a style="color: rgb(187, 196, 10); " href="registro">Registrate</a><br>
+          <a style="color: rgb(187, 196, 10); " href="index2">Parte Privada</a>
+         </form>
+   		</div>
+   </div>
+   <a style="color: rgb(187, 196, 10); "href="/">Volver</a><br>
+{% endblock %}
+
+{% block javascripts %}
+
+{% endblock %}
+    </body>
+</html>

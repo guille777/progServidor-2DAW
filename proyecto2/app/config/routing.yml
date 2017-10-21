@@ -1,0 +1,11 @@
+# se genera bundle por .yml con archivo routings para trabajar con archivos rutas y controlers
+guille:
+    resource: "@GuilleBundle/Controller/"
+    type:     annotation
+    prefix:   /
+clase:
+    resource: "@ClaseBundle/Resources/config/routing.yml"
+    prefix:    clase/
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

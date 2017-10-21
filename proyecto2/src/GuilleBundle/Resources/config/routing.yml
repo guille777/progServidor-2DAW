@@ -1,0 +1,25 @@
+# PARAA ENRUTAR PAGINAS CON EXTENSION .yml routing.yml -->annotation
+# prueba_homepage:
+#     path:     /
+#     defaults: { _controller: GuilleBundle:Default:index }
+# prueba_index2:
+#     path:     /index2
+#     defaults: { _controller: GuilleBundle:Default:index2}
+# prueba_login:
+#     path:     /login
+#     defaults: { _controller: GuilleBundle:Default:login}
+# prueba_registro1:
+#     path:     /registro1
+#     defaults: { _controller: GuilleBundle:Default:registro1}
+# prueba_servicios:
+#     path:     /servicios
+#     defaults: { _controller: GuilleBundle:Default:servicios}
+# prueba_horarios:
+#     path:     /horarios
+#     defaults: { _controller: GuilleBundle:Default:horarios}
+# prueba_lista:
+#     path:     /lista
+#     defaults: { _controller: ClaseBundle:Default:lista}
+# prueba_sede:
+#     path:     /sede/{ciudad}
+#     defaults: { _controller: ClaseBundle:Default:sede}
