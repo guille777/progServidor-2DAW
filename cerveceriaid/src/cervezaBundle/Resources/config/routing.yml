@@ -1,0 +1,9 @@
+cerveza_homepage:
+    path:     /
+    defaults: { _controller: cervezaBundle:Default:index }
+all_cervecitas:
+    path:     /all
+    defaults: { _controller: cervezaBundle:Cervecitas:all }
+id_cervecitas:
+    path:     /id/{id}
+    defaults: { _controller: cervezaBundle:Cervecitas:id }

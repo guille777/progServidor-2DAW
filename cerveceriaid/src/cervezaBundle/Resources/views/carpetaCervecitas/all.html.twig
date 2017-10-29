@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<div class"row">
+	<div class="w3-container">
+
+		{% for fila in TablaCervecitas %}
+
+		  <div class="w3-card-4" style="width:5px height:5px;" >
+			<a href="id/{{fila.id}}">
+				<p>{{fila.nombre}}</p>
+			    <img height="250px" src="{{ asset('img/')}}{{fila.foto}}" alt="Norway">
+			</a>
+		  </div>
+
+		{% endfor %}
+
+	</div>
+	
+</div>
+<a href="/">Volver</a>
+{% endblock %}
