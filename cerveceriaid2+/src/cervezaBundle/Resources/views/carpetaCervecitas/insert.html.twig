@@ -1,0 +1,47 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<div class"row">
+	<div class="w3-container">
+	<table class=" table table-striped table-inverse table-hover">
+	<tr>
+		<th>id</th>
+		<th>Nombre</th>
+		<th>pais</th>
+		<th>Poblacion</th>
+		<th>Tipo</th>
+		<th>Importacion</th>
+		<th>Tamaño</th>
+		<th>Fecha</th>
+		<th>Cantidad</th>
+		<th>Foto</th>
+
+	</tr>
+
+		{% for fila in TablaCervecitas %}
+
+		  <div class="w3-card-4" style="width:5px height:5px; border: solid;" >
+
+				<tr>
+					<td>{{ fila.id }}</td>
+    				<td>{{ fila.nombre }}</td>
+    				<td>{{ fila.pais }}</td>
+    				<td>{{ fila.poblacion }}</td>
+    				<td>{{ fila.tipo }}</td>
+    				<td>{{ fila.importacion }}</td>
+    				<td>{{ fila.tamano }}</td>
+    				<td>{{ fila.fechaAlamcen|date('Y-m-d') }}</td>
+    				<td>{{ fila.cantidad }}</td>
+    				<td><img height="250px" src="{{ asset('img/')}}{{fila.foto}}" alt=""></td>
+    				
+    			</tr>
+
+		  </div>
+
+		{% endfor %}
+		 </table>
+	</div>
+
+</div>
+<br><a href="/">Volver</a>
+{% endblock %}

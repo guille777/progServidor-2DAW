@@ -1,0 +1,18 @@
+cerveza_homepage:
+    path:     /
+    defaults: { _controller: cervezaBundle:Default:index }
+all_cervecitas:
+    path:     /all
+    defaults: { _controller: cervezaBundle:Cervecitas:all }
+id_cervecitas:
+    path:     /id/{id}
+    defaults: { _controller: cervezaBundle:Cervecitas:id }
+cerveza_insert:
+    path:     /insert/{nombre}/{pais}
+    defaults: { _controller: cervezaBundle:Cervecitas:insert }
+cerveza_delete:
+    path:     /delete/{id}
+    defaults: { _controller: cervezaBundle:Cervecitas:delete }
+cerveza_update:
+    path:     /update/{id}
+    defaults: { _controller: cervezaBundle:Cervecitas:update }
