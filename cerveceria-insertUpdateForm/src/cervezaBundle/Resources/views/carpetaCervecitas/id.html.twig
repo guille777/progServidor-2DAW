@@ -1,0 +1,36 @@
+
+{% block body %}
+	<h1>Devolviendo cervezas,recibe parametro y recupera,</h1>
+	<p>ampliar if controller si no recibe parametro</p>
+
+	<table border="1" class="table table-striped table-inverse table-hover">
+	<tr>
+		<th>Nombre</th>
+		<th>pais</th>
+		<th>Poblacion</th>
+		<th>Tipo</th>
+		<th>Importacion</th>
+		<th>Tamaño</th>
+		<th>Fecha</th>
+		<th>Cantidad</th>
+		<th>Foto</th>
+	</tr>
+
+	<tr>
+    	<td>{{ cervecita.nombre }}</td>
+    	<td>{{ cervecita.pais }}</td>
+    	<td>{{ cervecita.poblacion }}</td>
+    	<td>{{ cervecita.tipo }}</td>
+    	<td>{{ cervecita.importacion }}</td>
+    	<td>{{ cervecita.tamano }}</td>
+    	<td>{{ cervecita.fechaAlamcen|date('Y-m-d') }}</td>
+    	<td>{{ cervecita.cantidad }}</td>
+    	<td><img height="250px" src="{{ asset('img/')}}{{cervecita.foto}}"></td>
+    </tr>
+    </table>
+
+<p>Usando dump</p>
+    {{ dump(cervecita) }}
+    <a href="/all">Volver</a>
+
+{% endblock %}

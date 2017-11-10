@@ -1,0 +1,10 @@
+{% extends "base.html.twig" %}
+{% block body %}
+
+	<h1>Actualizado</h1>
+	{% for fila in TablaCervecitas %}
+		<p>{{fila.nombre}}</p>
+	{% endfor %}
+	
+    <a href="/all">Volver</a>
+{% endblock %}

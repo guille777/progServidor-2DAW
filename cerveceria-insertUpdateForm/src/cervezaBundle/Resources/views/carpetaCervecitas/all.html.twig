@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<div class"row">
+	<div class="w3-container">
+
+		{% for fila in TablaCervecitas %}
+
+		  <div class="w3-card-4" style="width:5px height:5px; border: solid;" >
+			<a href="id/{{fila.id}}">
+				<p>{{fila.nombre}}</p>
+			  <img height="250px" src="{{ asset('img/')}}{{fila.foto}}" alt="">
+			</a>
+			<a href="{{ path('cerveza_formUpdate', {'id': fila.id  }) }}">Update</a>
+			<a href="{{ path('cerveza_delete', {'id': fila.id  }) }}">Delete</a>
+		  </div>
+
+		{% endfor %}
+
+	</div>
+
+</div>
+<br><a href="/">Volver</a>
+{% endblock %}
