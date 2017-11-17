@@ -1,0 +1,4 @@
+services:
+#    guille.example:
+#        class: GuilleBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
