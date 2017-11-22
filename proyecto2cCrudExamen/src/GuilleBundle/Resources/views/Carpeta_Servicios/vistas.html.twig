@@ -1,0 +1,37 @@
+{% extends 'plantilla.html.twig' %}
+
+{% block body %}
+<br><br>
+<center>
+  <p><b>Sacar servicios de la BBDD</b></p>
+	<table border="1" class="table table-striped table-inverse table-hover">
+		<tr>
+			<th>Nombre</th>
+			<th>apellidos</th>
+			<th>Titulacion</th>
+			<th>servicio</th>
+			<th>precio</th>
+			<th>Nombres</th>
+			<th>Id</th>
+
+
+		</tr>
+		{% for fila in TablaServicios %}
+		<tr>
+	    	<td>{{ fila.nombre }}</td>
+	    	<td>{{ fila.apellidos }}</td>
+	    	<td>{{ fila.titulacion }}</td>
+	    	<td>{{ fila.servicio }}</td>
+	    	<td>{{ fila.precio }}</td>
+	    	<td><a href="{{ path('nombre', {'nombre': fila.nombre  }) }}">Mira por nombres</a></td>
+	    	<td><a href="{{ path('id', {'id': fila.id  }) }}">Mira por id</a></td>
+    	</tr>
+    	{% endfor %}
+     </table>
+</center
+{% endblock %}
+
+
+
+
+ 
