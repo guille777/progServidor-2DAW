@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+         <link rel="stylesheet" href="{{ asset('css/one-page-wonder.css') }}" />
+          <!-- <link rel="stylesheet" href="{{ asset('css/estilos.css') }}" /> -->
+          <link rel="icon" type="image/x-icon" href="{{ asset('img/harry.jpg') }}" />
+     
+      {% endblock %}
+    </head>
+    <body>
+      
+         <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="{{ path('index') }}">Tapas S.L</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ path('tapas') }}">Tapas
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+           
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('admin') }}">Admin</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+     <!-- Page Content -->
+    <div class="container">
+    {% block body %}
+      <div class="row">
+
+        <div class="col-lg-12 text-center">
+
+        <!--   <h1 class="mt-5">Bienvenid@</h1><br>
+            <p><b>- Esta es la parte publica, informacion de la empresa, servicios y asociados.</b></p>
+          <ul>
+            <li>Road a symfony 3+ bases datos backend</li>
+            <li>Bootstrap 4.0.0-beta-jQuery 3.2.1 mirar carpetas y CODIGO +JS</li>
+          </ul>
+ -->
+
+
+        </div>
+
+      </div>
+    {% endblock %}
+    </div>
+
+  
+
+  
+
+
+    
+       
+    
+
+        
+
+        {% block javascripts %}
+         <script src="{{ asset('css/jquery.min.js') }}"></script>
+  <script src="{{ asset('css/bootstrap.bundle.min.js') }}"></script>
+
+  
+        {% endblock %}
+    </body>
+</html>

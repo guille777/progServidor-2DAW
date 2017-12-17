@@ -1,0 +1,8 @@
+restaurante:
+    resource: "@restauranteBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
