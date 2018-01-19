@@ -1,0 +1,39 @@
+
+{% extends 'base2.html.twig' %}
+
+{% block body %}
+<p>Puedes insertar,<a href="{{ path('insertar_tapas') }}">INSERTAR TAPA</a></p><br>
+<p>Puedes insertar,<a href="{{ path('registrar_usuario') }}">INSERTAR UN USUARIO</a></p><br>
+
+<br><br>
+<center>
+  <p><b>Sacar tapas de la BBDD</b></p>
+
+  <table border="1" class="table table-striped table-inverse table-hover">
+		<tr>
+			<th>Nombre</th>
+			<th>Descripcion</th>
+			<th>Fecha</th>
+			<th>Precio</th>
+			<th>Foto</th>
+			<th>Mostrar Tapa</th>
+			<th>Eliminar Tapa</th>
+		</tr>
+		{% for fila in TablaTapas %}
+		<tr>
+	    	<td>{{ fila.nombre }}</td>
+	    	<td>{{ fila.descripcion }}</td>
+	    	<td>{{ fila.fecha|date('Y-m-d') }}</td>
+	    	<td>{{ fila.precio }}</td>
+	    	<td><img height="150px" src="{{ asset('img/')}}{{fila.foto}}" alt=""></td>
+	    	<td><a href="{{ path('mostrar',{'id':fila.id}) }}">Muestra</a></td>
+	    	<td><a href="{{ path('eliminarTapas',{'id':fila.id}) }}">Borrar</a></td>
+    	</tr>
+    	{% endfor %}
+     </table>
+</center
+{% endblock %}
+
+
+
+
