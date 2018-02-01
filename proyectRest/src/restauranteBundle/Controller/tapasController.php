@@ -89,15 +89,30 @@ class tapasController extends Controller
     }
 
     /**
-    * @Route("/admin", name="admin")
+    * @Route("/update/{id}", name="update")
     */
-    public function adminAction()
+    public function updateAction(Request $request,$id)
     {
-        $repository = $this->getDoctrine()->getRepository('restauranteBundle:tapas');
-        // find *all* cervezas
-        $tapa = $repository->findAll();
-        return $this->render('restauranteBundle:tapas:admin.html.twig',array('TablaTapas'=>$tapa) );
+
+      $tapa = $this->getDoctrine()->getRepository('restauranteBundle:tapas')->find($id);
+
+        if(!$tapa){return $this->redirectToRoute('error');}
+        $form = $this->createForm(\restauranteBundle\Form\tapasType::class, $tapa);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            $DB = $this->getDoctrine()->getManager();
+            $DB->persist($tapa);
+            $DB->flush();
+            return $this->redirectToRoute('mostrar', ["id" => $id]);
+        }
+        return $this->render("restauranteBundle:tapas:update.html.twig", array('form'=>$form->createView() ));
     }
+
+
+
+  
 
 
 

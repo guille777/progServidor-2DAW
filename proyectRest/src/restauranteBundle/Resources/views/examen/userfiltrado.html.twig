@@ -1,0 +1,45 @@
+{% extends 'base2.html.twig' %}
+
+{% block body %}
+
+
+<center>
+ 
+
+
+<div class="container">
+  <!-- Page Heading/Breadcrumbs -->
+  <h1 class="mt-4 mb-3">Reservas
+    <small> hoy </hoy>
+  </h1>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+      <th scope="col">id</th>
+        <th scope="col">username</th>
+        <th scope="col">password</th>
+        <th scope="col">email</th>
+        <th scope="col">BORRAR</th>
+        <th scope="col">ACTUALIZAR</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for fila in TablaUsers %}
+      <tr>
+      <td>{{fila.id}}</td>
+        <td scope="row">{{ fila.username }}</td>
+        <td>{{fila.password}}</td>
+        <td>{{fila.email}}</td>
+        <td><a href="{{ path('userdelete',{'id':fila.id}) }}">Borrar</a></td>
+        <td><a href="{{ path('userupdate',{'id':fila.id}) }}">actualiza</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+
+{% endblock %}
+
+
+

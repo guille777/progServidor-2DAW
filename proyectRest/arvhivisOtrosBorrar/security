@@ -2,9 +2,9 @@
 # https://symfony.com/doc/current/security.html
 security:
     encoders:
-        restauranteBundle\Entity\Usuarios: bcrypt
+        UsuariosBundle\Entity\usuarios:
+            algorithm: bcrypt
         Symfony\Component\Security\Core\User\User: plaintext
-
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
         in_memory:
@@ -15,14 +15,12 @@ security:
                         roles: 'ROLE_ADMIN'
         my_db_provider:
             entity:
-                class: restauranteBundle:Usuarios
+                class: usuarioBundle:usuarios
                 property: username
 
     access_control:
     - { path: ^/admin, roles: ROLE_ADMIN }
-    - { path: ^/cud, roles: ROLE_ADMIN }
-    - { path: ^/filtrado, roles: ROLE_ADMIN }
-    - { path: ^/userfiltrado, roles: ROLE_ADMIN }
+    - { path: ^/crearTapas, roles: ROLE_ADMIN }
     - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
 
     firewalls:
@@ -31,18 +29,18 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         admin:
-            pattern: ^/admin
+            pattern: ^/usuario/admin
             http_basic: ~
         usuarios:
-            pattern: ^/
+            pattern: ^/usuario
             anonymous: ~
             provider: my_db_provider
             form_login:
-                login_path: /login
-                check_path: /login
+                login_path: /usuario/login
+                check_path: /usuario/login
             logout:
-                path: /logout
-                target: /login
+              path: /usuario/logout
+              target: /usuario/login
         # main:
         #     anonymous: ~
             # activate different ways to authenticate
