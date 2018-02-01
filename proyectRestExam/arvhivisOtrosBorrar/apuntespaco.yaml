@@ -1,0 +1,7 @@
+  firewall el cacharro que corta las reglas de corte, cortafuegos y aplicarlas sobre un determinado e
+            espacio(toda la API), encriptamos el entity el login, 
+
+            acces control define estos trozos dentro de la ruta general, desde la ruta que partes vamos a 
+            permitir hacer unas cosas u otras,
+
+            app-->bundle-->controller-->action y twig...

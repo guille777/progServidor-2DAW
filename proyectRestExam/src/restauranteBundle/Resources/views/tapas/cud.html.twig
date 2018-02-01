@@ -1,0 +1,46 @@
+{% extends 'base2.html.twig' %}
+
+{% block body %}
+
+
+<br><br>
+<center>
+<h1>Gestion de Tapas</h1><br>
+  <p><b>Listado de todas las tapas de la BBDD :</b></p><br>
+  <p>Puedes insertar :<a href="{{ path('insertar_tapas') }}">INSERTAR TAPA</a></p><br>
+
+  <table border="1" class="table table-striped table-inverse table-hover">
+		<tr>
+			<th>Nombre</th>
+			<th>Descripcion</th>
+			<th>Fecha</th>
+			<th>Precio</th>
+			<th>Foto</th>
+			<th>Mostrar Tapa</th>
+			<th>Eliminar Tapa</th>
+			<th>Update Tapa</th>
+		</tr>
+		{% for fila in TablaTapas %}
+		<tr>
+	    	<td>{{ fila.nombre }}</td>
+	    	<td>{{ fila.descripcion }}</td>
+	    	<td>{{ fila.fecha|date('Y-m-d') }}</td>
+	    	<td>{{ fila.precio }}</td>
+	    	<td><img height="150px" src="{{ asset('img/')}}{{fila.foto}}" alt=""></td>
+	    	<td><a href="{{ path('mostrar',{'id':fila.id}) }}">Muestra</a></td>
+	    	<td><a href="{{ path('eliminarTapas',{'id':fila.id}) }}">Borrar</a></td>
+	    	<td><a href="{{ path('update',{'id':fila.id}) }}">Update</a></td>
+    	</tr>
+    	{% endfor %}
+     </table>
+</center
+<br>
+<center>
+	<h1>Gestion de Usuarios</h1>
+	<a class="navbar-brand" href="{{ path('filtrado') }}">Usuarios</a>
+</center>
+{% endblock %}
+
+
+
+
